@@ -1,0 +1,690 @@
+/* *-------------------------------------------- GLOBAL ------------------------------------ */
+
+:root {
+    --beige: #f7dbb9;
+    --brown: #4A2C2A;
+    --beige-pink: #f7eeee;
+    --light-brown: #5a3e2b;
+    --beige-sand: #f8f1e5;
+    --beige-sand-darker: #f7e8da;
+    --beige-sand-light: #fff8f0;
+    --hover-buttons: #ffbf71;
+}
+
+html {
+    font-size: 10px;
+    height: 100vh;
+}
+
+body {
+    background-color: var(--beige-pink);
+    font-family: 'Georgia', serif;
+    overflow: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+h2, h3 {
+    color: var(--brown);
+    border-bottom: 3px solid #c49a6c;
+    padding-bottom: 0.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 2.4rem;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.btn {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.02);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-beige {
+    transition: background-color 0.3s ease-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    background-color: var(--beige);
+}
+
+.btn-beige:hover {
+    background-color: var(--hover-buttons);
+    color: var(--brown);
+}
+
+/* *----------------------------------- HEADER -------------------------------------- */
+
+header {
+    background-color: var(--brown);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    padding: 1.5rem 2.5rem;
+    position: relative;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.header-title {
+    h1 {
+        color: white;
+        font-size: 4rem;
+        font-weight: bold;
+        text-shadow: 0 1px 2px rgb(168, 166, 166);
+    }
+
+    img {
+        width: 20%;
+        margin-right: 1rem;
+    }
+}
+
+.header-links {
+    z-index: 500;
+
+    ul {
+        display: flex;
+        list-style: none;
+    }
+
+    li {
+        margin-left: 2.5rem;
+
+    }
+
+    a {
+        color: white;
+        font-size: 2rem;
+        transition: color 0.3s ease-out;
+        text-shadow: 0 3px 5px rgb(111, 113, 126);
+    }
+
+    a:hover {
+        color: var(--beige)
+    }
+}
+
+/* *---------------------------------------------------- MENU BURGER ------------------------------------------------- */
+
+
+.active {
+    border-bottom: 2px solid var(--beige);
+    color: var(--beige) !important;
+}
+
+.menu-burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 3rem;
+    height: 2.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+
+.menu-burger span {
+    display: block;
+    width: 100%;
+    height: 0.3rem;
+    background-color: white;
+    border-radius: 0.2rem;
+}
+
+/* *---------------------------------------------------- FOOTER ------------------------------------------------- */
+
+footer {
+    background-color: var(--light-brown);
+    color: var(--beige-sand);
+    padding: 2rem 0;
+    text-align: center;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.footer-content p {
+    margin: 2rem 0;
+    font-size: 2rem;
+}
+
+.footer-links {
+    ul {
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row wrap;
+
+        li {
+            margin: 0 2rem;
+            a {
+                font-size: 2rem;
+                text-shadow: 0 3px 5px rgb(111, 113, 126);
+                color: var(--beige-sand-light);
+               
+            }
+            a:hover {
+                color: var(--hover-buttons);
+            }
+        }
+    }
+
+}
+
+
+
+/* *---------------------------------------------------- FORMULAIRE DE CONTACT ------------------------------------------------- */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    label {
+        font-size: 1.6rem;
+    }
+    
+    textarea {
+        padding: 2rem;
+        resize: vertical;
+        border-radius: 0.5rem;
+        font-size: 2rem;
+    }
+    
+    input {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        font-size: 2rem;
+    }
+
+    button {
+        width: 20%;
+        padding: 1rem;
+        border-radius: 10px;
+    }
+}
+
+
+/* *---------------------------------------------------- CONTENU ------------------------------------------------- */
+
+main {
+    width: 90%;
+    margin: 2rem auto;
+    padding: 4rem 2rem;
+    background-color: var(--beige-sand);
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    box-sizing: border-box;
+}
+
+
+/* *---------------------------------------------------- COFFEE CARDS ------------------------------------------------- */
+
+.coffee-card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8rem; 
+    padding: 2rem;
+}
+
+.coffee-card {
+    background-color: var(--beige-sand-darker);
+    border-radius: 1rem;
+    box-shadow: 0 10px 4px rgba(0, 0, 0, 0.418);
+    padding: 2.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, opacity 0.5 ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: opacity 0.5s ease-in-out;
+
+    img {
+        width: 100%;
+        flex-shrink: 0;
+        border-radius: 10px;
+        height: 200px;
+        object-fit: cover;
+    }
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }to {
+        opacity: 1;
+    }
+}
+
+.coffee-card:hover {
+    transform: translateY(-0.4rem);
+    background-color: var(--beige-pink);
+}
+
+.coffee-card.show {
+    opacity: 1;
+}
+
+.para-produit {
+    font-size: 2rem;
+    color: var(--light-brown);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.coffee-name {
+    margin-top: 1rem;
+}
+
+.lien-produit {
+    background-color: var(--light-brown);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    font-size: 1.6rem;
+    display: block;
+    transition: background-color 0.3s ease;
+    margin-top: auto;
+}
+
+.lien-produit:hover {
+    background-color: var(--brown);
+}
+
+.coffee-card-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+
+    strong {
+        color: var(--brown);
+        font-weight: bold;
+        font-size: 2.6rem;
+    }
+    span {
+        color: var(--brown);
+        font-size : 1.3rem;
+        font-weight: bold;
+    }
+}
+
+.unavailable {
+    opacity: 0.6;
+}
+
+/* *-------------------------------------------- PAGE D'ACCUEIL ------------------------------------ */
+
+.catalogue-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row-reverse wrap;
+    align-items: center;
+    margin-bottom: 8rem;
+
+    img {
+        width: 50%;
+        border-radius: 2rem;
+    }
+
+}
+
+.btn-catalogue {
+    color: var(--light-brown);
+    padding: 2rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    margin: auto;
+}
+
+
+/* *-------------------------------------------- PAGE CATALOGUE ------------------------------------ */
+
+.notre-catalogue {
+    position: relative;
+    height: 50rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    .background-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url('../images/coffees/753915650.png');
+        background-size: cover;
+        background-position: center;
+        filter: blur(10px);
+        opacity: 0.95;
+        z-index: 0;
+    }
+
+    h2 {
+    z-index: 2;
+    color: white;
+    font-size: 4rem;
+    text-align: center;
+    }
+}
+
+.select-container {
+    margin: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.catalogue-select {
+    padding: 0.75rem;
+    border-radius: 20px;
+    border: 1px solid var(--hover-buttons);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: var(--beige-sand-light);
+    color: var(--brown);
+    font-size: 1.6rem;  
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    width: 300px; 
+}
+
+.catalogue-select:hover {
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.catalogue-select option {
+    padding: 0.5rem 1rem; 
+}
+
+.catalogue-select option.all-categories {
+    font-weight: bold;
+    color: var(--primary-color);  
+}
+
+.filter-button {
+    padding: 1rem;
+    border-radius: 20px;
+    border: 1px solid var(--hover-buttons);
+    background-color: var(--beige-sand-light);
+    color: var(--light-brown);
+    font-size: 2rem;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s ease;
+}
+
+.filter-button:hover {
+    background-color: var(--beige);
+}
+
+/* *-------------------------------------------- PAGE PRODUIT ------------------------------------ */
+
+.image-background-product-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60rem; 
+    margin: auto;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.coffee-informations {
+    width: 80%;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.date-publication {
+    text-align: end;
+    font-style: italic;
+    text-decoration: underline #c49a6c;
+}
+
+.back-to-catalogue {
+    padding: 2rem 2rem;
+    border-radius: 1rem;
+    font-size: 1.6rem;
+    color: var(--brown);
+    font-weight: bold;
+    display: block;
+    max-width: 20%;
+    text-align: center;
+}
+
+#map { 
+    height: 30rem; 
+}
+
+/* *-------------------------------------------- PAGE EN SAVOIR PLUS ------------------------------------ */
+
+.qui-sommes-nous, .ambiance, .savoir-faire {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    
+    p {
+        font-size: 1.6rem;
+        line-height: 1.6;
+        color: var(--light-brown);
+        margin-top: 1rem;
+    }
+}
+
+.first-para {
+    font-weight: bold;
+}
+
+.qui-sommes-nous, .savoir-faire {
+    background: var(--beige-sand-darker)
+}
+
+.ambiance {
+    background: var(--beige-sand-light);
+}
+
+/* *-------------------------------------------- PAGE 404 ------------------------------------ */
+
+.page-404 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    img {
+        width: 40%;
+        border-radius: 50%;
+        margin-bottom: 2rem;
+    }
+}
+
+/* *-------------------------------------------- MAX 1250PX ------------------------------------ */
+@media screen and (max-width:1250px) {
+    .coffee-card-bottom {
+        flex-direction: column;
+        justify-content: space-around;
+        strong {
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+
+/* *-------------------------------------------- MAX 1024PX ------------------------------------ */
+
+@media screen and (max-width: 1024px) {
+    .coffee-card-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+
+    footer {
+        flex-flow: column-reverse;
+    }
+
+    .footer-links {
+        ul {
+            flex-direction: column;
+            margin: 2rem 0;
+            li {
+                
+            margin: 2rem 0;
+            }
+        }
+    }
+}
+
+/* *-------------------------------------------- MAX 768PX ------------------------------------ */
+
+@media screen and (max-width : 768px) {
+    h2 {
+        text-align: center;
+    }
+    
+    .menu-burger {
+        display: flex;
+    }
+    
+    .header-links {
+        position: absolute;
+        top: 10rem;
+        right: 0;
+        width: 100%;
+        background-color: var(--brown);
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(100%);
+        display: none;
+        
+        ul {
+            flex-direction: column;
+            width: 100%;
+        }
+        
+        li {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+    }
+    
+    /* Affiche le menu */
+    .header-links.burger-active {
+        display: block;
+        transform: translateX(0);
+    }
+    
+    .catalogue-container {
+        flex-wrap: wrap;
+        gap: 0.2rem;
+        justify-content: center;
+        
+        img {
+            width: 95%;
+            border-radius: 2rem;
+            margin: 0 auto 4rem auto;
+        }
+    }
+    
+    .catalogue {
+        width: 90%;
+    }
+    
+    .date-publication {
+        text-align: start;
+    }
+    
+    .coffee-informations {
+        width: 90%;
+    }
+
+   
+
+    .footer-content {
+        border-bottom: 1px solid var(--hover-buttons);
+    }
+
+}
+
+/* *-------------------------------------------- MAX 520PX ------------------------------------ */
+
+@media screen and (max-width: 520px) {
+    .coffee-card-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    main {
+        min-width: 100%;
+        padding: 1rem;
+    }
+    
+    header {
+        min-width: 100%;
+        flex-direction: column;
+    }
+    
+    footer {
+        min-width: 100%;
+    }
+    
+    .header-title {
+        flex-direction: column;
+    }
+    
+    .header-links.burger-active {
+        transform: translateY(5rem);
+    }
+    
+    .btn-catalogue {
+        min-width: 80%;
+    }
+
+    .back-to-catalogue {
+        min-width: 80%;
+    }
+}

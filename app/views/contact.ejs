@@ -1,0 +1,24 @@
+<%- include('./partials/header') %>
+
+<main>
+    <form class="contact-form" id="contact-form">
+        <label for="name">Nom</label>
+        <input type="text" name="name" id="nom" placeholder="Votre nom">
+
+        <label for="firstname">Prénom</label>
+        <input type="text" name="firstname" id="prenom" placeholder="Votre prénom">
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="Votre email">
+
+        <label for="subject">Sujet</label>
+        <input type="text" id="subject" name="subject" placeholder="Sujet">
+
+        <label for="message">Message</label>
+        <textarea name="message" id="message" placeholder="Votre message"></textarea>
+
+        <button type="submit" class="btn btn-beige">Envoyer</button>
+    </div>
+</main>
+
+<%- include('./partials/footer') %>

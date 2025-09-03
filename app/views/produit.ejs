@@ -1,0 +1,19 @@
+<%- include('./partials/header') %>
+<main>
+  <section class="image-background-product-page">
+    <img src="/images/coffees/<%= coffee.reference %>.png" alt="Image du café ayant pour nom : <%= coffee.name %>"/>
+  </section>
+  <section class="coffee-informations">
+    <p class="date-publication para-produit">Publié le <%= new Date(coffee.date_added).toLocaleDateString('fr-FR') %></p>
+    <h3 id="coffee-name"><%= coffee.name %></h3>
+    <p class="para-produit"><span class="bold">- Description : </span><%= coffee.description %></p>
+    <p id="origin" class="para-produit" data-latitude="<%= coffee.country_latitude %>" data-longitude="<%= coffee.country_longitude %>"><span class="bold">- Origine : </span><span id="origin-value"><%= coffee.country_name %></span></p>
+    <p class="para-produit"><span class="bold">- Prix au kg : </span><%= coffee.price %>€</p>
+    <p class="para-produit"><span class="bold">- Caractéristique : </span><%= coffee.category %></p>
+    <p class="para-produit"><span class="bold">- Disponibilité : </span><%= coffee.availability ? 'Disponible' : 'Non disponible' %></p>
+    <a href="/catalogue" class="btn btn-beige back-to-catalogue">Voir le catalogue</a>
+  </section>
+  <div id="map"></div>
+</main>
+
+<%- include('./partials/footer') %>

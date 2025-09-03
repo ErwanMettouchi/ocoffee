@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCoffee / <%= pageTitle %></title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/reset.css">
+
+  <% if(url.includes('/produit')) { %>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <% } %>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="/javascript/contact.js" defer></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <header>
+    <a href="/">
+      <div class="header-title">
+        <img src="../images/logo.svg" alt="Logo du site Ocoffee">
+        <h1>oCoffee</h1>
+      </div>
+    </a>
+    <!-- * Menu Burger -->
+    <button class="menu-burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="header-links">
+      <ul>
+        <li><a href="/">Accueil</a></li>
+        <li><a href="/catalogue">Catalogue</a></li>
+        <li><a href="#">Boutique</a></li>
+        <li><a href="/en-savoir-plus">En savoir plus</a></li>
+      </ul>
+    </nav>
+  </header>

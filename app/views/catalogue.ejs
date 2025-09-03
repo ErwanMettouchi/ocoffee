@@ -1,0 +1,47 @@
+<%- include('./partials/header') %>
+
+<main>
+  <section class="notre-catalogue">
+    <div class="background-image"></div>
+    <h2>Notre catalogue</h2>
+  </section>
+
+  <form action="/catalogue" class="select-container">
+    <select class="catalogue-select" name="category" multiple>
+      <% for(category of categories) { %>
+      <option value="<%= category.name.toLowerCase() %>"><%= category.name %></option>
+      <% } %>
+    </select>
+    <button type="submit" class="filter-button">Rechercher par catégorie(s)</button>
+  </form>
+  <div class="coffee-card-container">
+    <% if (categoryQuery.length === 0) { %>
+    <% for(coffee of coffees) { %>
+    <article class="coffee-card <%= !coffee.availability ? 'unavailable' : '' %>">
+      <img src="/images/coffees/<%= coffee.reference %>.png">
+      <h3 class="coffee-name"><%= coffee.name %></h3>
+      <p class="para-produit"><%= coffee.description %></p>
+      <div class="coffee-card-bottom">
+        <p><strong><%= coffee.price%></strong><span class="kg">€/kg</span></p>
+        <a href="/produit/<%= coffee.id %>" class="btn lien-produit">Découvrir ce café</a>
+      </div>
+    </article>
+    <% } %>
+    <% } else { %>
+    <% for(coffee of coffeesCat) { %>
+      <article class="coffee-card <%= !coffee.availability ? 'unavailable' : '' %>">
+        <img src="/images/coffees/<%= coffee.reference %>.png">
+        <h3 class="coffee-name"><%= coffee.name %></h3>
+        <p class="para-produit"><%= coffee.description %></p>
+        <div class="coffee-card-bottom">
+          <p><strong><%= coffee.price%></strong><span class="kg">€/kg</span></p>
+          <a href="/produit/<%= coffee.id %>" class="btn lien-produit">Découvrir ce café</a>
+        </div>
+      </article>
+    <% } %>
+    <% } %>
+  </div>
+    <button class="btn btn-beige btn-catalogue see-more">Voir plus</button>
+</main>
+
+<%- include('./partials/footer') %>
